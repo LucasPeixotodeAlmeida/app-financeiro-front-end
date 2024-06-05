@@ -7,17 +7,18 @@
     <title>Login Usuário</title>
 </head>
 <body class="bg-cyan-600 h-screen items-center flex justify-center">
-    <form action="" class="flex gap-24">
+    <form th:action="@{/user/signIn}" method="post" class="flex gap-24">
         <div class="text-slate-900 max-w-80 text-6xl flex items-center font-semibold">
             App Gestão Financeira
         </div>
         <div class="space-y-8 bg-cyan-950 rounded-md p-20">
             <input type="text" name="username" 
-                class="bg-gray-50 text-gray-900 text-xd rounded w-96 block p-4 focus:outline-none focus:ring-blue-600 focus:ring-2" placeholder="Usuário"
+                class="bg-gray-50 text-gray-900 text-xd rounded w-96 block p-3 focus:outline-none focus:ring-blue-600 focus:ring-2" placeholder="Usuário"
             >
             <input type="password" name="password"
-                class="bg-gray-50 text-gray-900 text-xd rounded w-96 block p-4 focus:outline-none focus:ring-blue-600 focus:ring-2" placeholder="Senha"
+                class="bg-gray-50 text-gray-900 text-xd rounded w-96 block p-3 focus:outline-none focus:ring-blue-600 focus:ring-2" placeholder="Senha"
             >
+            <p class="text-red-400" th:if="${error_message}" th:text="${error_message}"></p>
             <button class="bg-blue-700 w-96 rounded text-white hover:bg-blue-900 p-4">Login</button>
             <a href="" class="block text-center text-white underline underline-offset-2 hover:text-blue-600">Crie sua conta</a>
         </div>
